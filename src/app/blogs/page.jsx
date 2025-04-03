@@ -1,6 +1,6 @@
 "use client"
 import {useState} from "react";
-import BlogCard from "@/app/components/BlogCard"
+import BlogCard from "@/app/components/BlogCard";
 
 export default function Blogs()
 {
@@ -31,7 +31,7 @@ export default function Blogs()
     };
 
   return (
-    <div className="w-full grid grid-cols-3">
+    <div>
       {blogs.map((blog) => (
         <BlogCard key={blog.id} blog={blog} onDelete={
             handleDelete} />

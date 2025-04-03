@@ -1,7 +1,4 @@
-// components/BlogCard.jsx
 import Link from "next/link";
-
-// BlogCard Component
 export default function BlogCard({blog, onDelete})
 {
   return (
