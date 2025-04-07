@@ -1,12 +1,17 @@
-export default async function Posts({ params }){
+export default async function Posts({ params }) {
+    const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${params.slug}`, {
+        next: {
+            tags: ["postsupdation"]
+        }
+    });
+    const post = await res.json();
 
-    const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${params.slug}`);
-    const post = res => res.json();
-
-    return <div>
-        <div>{ post.title }</div>
-        <div>{ post.body }</div>
-    </div>
+    return (
+        <div>
+            <div>{post.title}</div>
+            <div>{post.body}</div>
+        </div>
+    );
 }
 
 // export async function getStaticProps({ params }){
